@@ -152,9 +152,20 @@ public class EasyExcelUtils {
      * @param errorFileName
      * @param exportList
      * @param clazz
-     * @throws IOException
      */
-    public static void writeErrorExcel(String errorFileName, List exportList, Class clazz) throws IOException {
+    public static void writeErrorExcel(String errorFileName, List exportList, Class clazz) {
+        writeErrorExcel(DOWNLOAD_DIR, errorFileName, exportList, clazz);
+    }
+
+
+    /**
+     * 错误信息输出(无模板)
+     * @param dir
+     * @param errorFileName
+     * @param exportList
+     * @param clazz
+     */
+    public static void writeErrorExcel(String dir, String errorFileName, List exportList, Class clazz) {
         String downloadFilePath = DOWNLOAD_DIR + File.separator + "importError" + File.separator + errorFileName;
         File file = new File(downloadFilePath);
         if (!file.getParentFile().exists()) {
