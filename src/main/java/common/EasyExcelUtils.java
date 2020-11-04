@@ -166,7 +166,7 @@ public class EasyExcelUtils {
      * @param clazz
      */
     public static void writeErrorExcel(String dir, String errorFileName, List exportList, Class clazz) {
-        String downloadFilePath = DOWNLOAD_DIR + File.separator + "importError" + File.separator + errorFileName;
+        String downloadFilePath = dir + File.separator + "importError" + File.separator + errorFileName;
         File file = new File(downloadFilePath);
         if (!file.getParentFile().exists()) {
             file.getParentFile().mkdirs();
