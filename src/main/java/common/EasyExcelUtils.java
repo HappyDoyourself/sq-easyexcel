@@ -119,20 +119,28 @@ public class EasyExcelUtils {
 
     /**
      * 导入失败信息输出(有模板)
-     * @param errorFileName 失败文件保存地址路径
-     * @param exportList 失败内容
-     * @param clazz 模型
+     * @param errorFileName    失败文件名称
+     * @param exportList       失败内容
+     * @param clazz            模型
      * @param resourceAsStream 模板
-     * @throws IOException
      */
-    public static void writeErrorExcel(String errorFileName,
-                                       List exportList,
-                                       Class clazz,
-                                       InputStream resourceAsStream) throws IOException {
+    public static void writeErrorExcel(String errorFileName, List exportList, Class clazz, InputStream resourceAsStream) {
+        writeErrorExcel(DOWNLOAD_DIR, errorFileName, exportList, clazz, resourceAsStream);
+    }
 
-        String downloadFilePath = DOWNLOAD_DIR + File.separator + "importError"+File.separator+errorFileName;
+    /**
+     * 导入失败信息输出(有模板)
+     *
+     * @param dir              失败文件保存地址路径
+     * @param errorFileName    失败文件名称
+     * @param exportList       失败内容
+     * @param clazz            模型
+     * @param resourceAsStream 模板
+     */
+    public static void writeErrorExcel(String dir, String errorFileName, List exportList, Class clazz, InputStream resourceAsStream) {
+        String downloadFilePath = dir + File.separator + "importError" + File.separator + errorFileName;
         File file = new File(downloadFilePath);
-        if(!file.getParentFile().exists()) {
+        if (!file.getParentFile().exists()) {
             file.getParentFile().mkdirs();
         }
 
@@ -146,12 +154,10 @@ public class EasyExcelUtils {
      * @param clazz
      * @throws IOException
      */
-    public static void writeErrorExcel(String errorFileName,
-                                       List exportList,
-                                       Class clazz)throws IOException {
-        String downloadFilePath = DOWNLOAD_DIR + File.separator + "importError"+File.separator+errorFileName;
+    public static void writeErrorExcel(String errorFileName, List exportList, Class clazz) throws IOException {
+        String downloadFilePath = DOWNLOAD_DIR + File.separator + "importError" + File.separator + errorFileName;
         File file = new File(downloadFilePath);
-        if(!file.getParentFile().exists()) {
+        if (!file.getParentFile().exists()) {
             file.getParentFile().mkdirs();
         }
         EasyExcel.write(downloadFilePath, clazz).sheet().doWrite(exportList);
