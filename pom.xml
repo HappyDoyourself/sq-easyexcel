@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.sq</groupId>
 	<artifactId>easyexcel</artifactId>
-	<version>0.0.4-SNAPSHOT</version>
+	<version>0.0.5-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<name>easyexcel</name>
 	<url>http://maven.apache.org</url>

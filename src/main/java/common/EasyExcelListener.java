@@ -132,7 +132,7 @@ public class EasyExcelListener <T>  extends AnalysisEventListener<T> {
                     }
                     if (!headMap.get(key).equals(indexNameMap.get(key))){
                         log.error("解析excel出错,请传入正确格式的excel,导入标题{}与检查标题{}不匹配",headMap.get(key),indexNameMap.get(key));
-                        throw new ExcelAnalysisException("解析excel出错,请传入正确格式的excel,导入标题headMap.get(key)与检查标题indexNameMap.get(key)不匹配");
+                        throw new ExcelAnalysisException("解析excel出错,请传入正确格式的excel,导入标题"+headMap.get(key)+"与检查标题"+indexNameMap.get(key)+"不匹配");
                     }
                 }
 
