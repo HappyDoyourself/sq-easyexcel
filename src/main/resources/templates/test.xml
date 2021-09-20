@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<varitions>
+    <!-- 登陆短信是否开启验证-->
+    <dict key="validateCode">false</dict>
+    <!-- 司机信息查询是否只显示合规司机开关-->
+    <dict key="driverShowSwitch">true</dict>
+    <!-- 司机信息查询是否只显示合规司机城市-->
+    <dict key="driverShowCities">78,87</dict>
+</varitions>
